@@ -1,0 +1,19 @@
+{
+    "presets": ["es2015","react"]
+    // "env" : {
+    //     "development":{
+    //         "plugins" : [
+    //             //react-tramsform 설정
+    //             ["react-transform",{
+    //                 "transforms" : [{
+    //                     "transform" : "react-transform-hmr",
+    //                     //react native 사용시 react-native를 사용
+    //                     "import" : ["react"],
+    //                     //HMR을 사용하기 위해 설정
+    //                     "locals" : ["module"]
+    //                 }]
+    //             }]
+    //         ]
+    //     }
+    // }
+}

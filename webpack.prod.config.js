@@ -5,6 +5,10 @@ const merge = require('webpack-merge');
 //가져올 웹팩 모듈
 const common = require('./webpack.config.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].[contenthash].css",
+    disable: process.env.NODE_ENV === "development"
+});
 
 module.exports = merge(common, {
     //loader 설정 : 소스파일 전처리, 변경, 변환
@@ -14,6 +18,18 @@ module.exports = merge(common, {
             {test:/\.json$/, loader : "json-loader"},
             //js 바벨 컴파일
             {test:/\.js$/, loader:'babel-loader',exclude:/node_modules/},
+            {
+                test: /\.scss$/,
+                use: extractSass.extract({
+                    use: [{
+                        loader: "css-loader"
+                    }, {
+                        loader: "sass-loader"
+                    }],
+                    // use style-loader in development
+                    fallback: "style-loader"
+                })
+            },
             //cssloader: import,url 찾고 해석, styleloader : 계산된 모든 스타일 규칙을 페이지에 추가
             //postcssloader: autoprefix, less, sass등을 컴파일
             {test:/\.css$/, use:ExtractTextPlugin.extract({
@@ -36,6 +52,6 @@ module.exports = merge(common, {
         //압축하기
         new webpack.optimize.OccurrenceOrderPlugin(),
         // 모든 css의 import, require를 css로 출력하여 인라인스타일로 들어가지 않게 하는 플러그인
-        new ExtractTextPlugin("style.css"),
+        new ExtractTextPlugin("[name]-[hash].css")
     ]
 });

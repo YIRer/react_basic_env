@@ -1,9 +1,5 @@
 /*! Banner Test */
-#root{
-    background-color: #eee;
-    padding: 10px;
-    border:3px solid #ccc;
-}html{
+html{
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     test-size-adjust:100%;
@@ -24,4 +20,4 @@ h1,h2,h3,h4,h5,h6,p,ul{
     margin: 0;
     padding: 0;
 }
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLWJkNmZlNGQ2ZTIxODJjYzgzYzkyLmNzcyIsInNvdXJjZVJvb3QiOiIifQ==*/

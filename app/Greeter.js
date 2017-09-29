@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import config from './config.json';
 
-import style from './Greeter.css';
+import style from './Greeter.scss';
 
 class Greeter extends Component {
     render(){

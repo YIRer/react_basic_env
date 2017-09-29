@@ -3,7 +3,7 @@ const path = require('path');
 //웹팩 플러그인 사용을 위한 플러그인 로드
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     //source-map:실제제품 사용시 설정
     devtool: 'inline-source-map',
@@ -12,7 +12,7 @@ module.exports = {
     //번들파일이 생성되는 위치
     output: {
         path : __dirname + "/build",
-        filename: "bundle.js"
+        filename: "[name]-[hash]].js"
     },
     plugins:[
         // 템플릿 불러오기
